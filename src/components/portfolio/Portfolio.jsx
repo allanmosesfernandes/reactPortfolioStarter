@@ -14,55 +14,55 @@ const data = [
     image: port1,
     title: 'Starter Labs',
     github: 'https://github.com/allanmosesfernandes/thestarterlabswebsite',
-    live: 'https://thestarterlabs.netlify.app/,'
+    live: 'https://thestarterlabs.netlify.app/'
   },
   {
     id: 2,
     image: port2,
     title: 'Croue Resorts Goa',
     github: 'https://github.com/allanmosesfernandes/C-Roque',
-    live: 'https://thestarterlabs.netlify.app/,'
+    live: 'https://www.croqueresortgoa.com/'
   },
   {
     id: 3,
     image: port3,
     title: 'Balhuas',
     github: 'https://github.com/allanmosesfernandes/',
-    live: 'https://www.was-ist-los-mit-jaron.de/,'
+    live: 'https://www.was-ist-los-mit-jaron.de/'
   },
   {
     id: 4,
     image: port4,
     title: 'Budget Calculator',
-    github: 'https://github.com/allanmosesfernandes/thestarterlabswebsite',
-    live: 'https://thestarterlabs.netlify.app/,'
+    github: 'https://github.com/allanmosesfernandes/',
+    live: 'https://brave-roentgen-b0aca3.netlify.app/'
   },
   {
     id: 5,
     image: port5,
     title: 'Yaan Man',
     github: 'https://github.com/allanmosesfernandes/',
-    live: 'https://thestarterlabs.netlify.app/,'
+    live: 'https://thestarterlabs.netlify.app/'
   },
   {
     id: 6,
     image: port6,
     title: 'Audio Oscillator',
     github: 'https://github.com/allanmosesfernandes/',
-    live: 'https://thestarterlabs.netlify.app/,'
+    live: 'https://dazzling-hypatia-ce5670.netlify.app/'
   },
 ]
 
 const items = data.map((item) => {
        return(
-         <article className="portfolio__item">
+         <article className="portfolio__item" key={item.id}>
           <div className="portfolio__item-image">
-            <img src={item.image} alt='portfolio one' />
+            <img src={item.image} alt={item.title} />
           </div>
             <h3>{item.title}</h3>
             <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
+              <a href={item.github} target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
+              <a href={item.live} target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
                
             </div>
         </article> 
@@ -76,78 +76,7 @@ const Portfolio = () => {
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-      {items}
-
-        {/* <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-               
-            </div>
-
-        </article> */}
-        {/* <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-               
-            </div>
-
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-            </div>
-
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-            </div>
-
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-            </div>
-
-        </article>
-        <article className="portfolio__item">
-          <div className="portfolio__item-image">
-            <img src={port1} alt='portfolio one' />
-          </div>
-            <h3>This is a portfolio item title</h3>
-            <div className="portfolio__item-cta">
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn'>Github</a>
-              <a href="http://" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>Live Demo</a>
-            </div>
-
-        </article>
-       */}
-      
+        {items}
       </div>
     </section>
   )
