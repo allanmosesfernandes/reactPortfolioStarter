@@ -55,9 +55,9 @@ const Contact = () => {
         {/* //End of Contact Options // */}
 
         <form  ref={form} onSubmit={sendEmail}>
-          <input type="text" name='name' placeholder='Full Name' required/>
+          <input type="text" name='name' placeholder=' Name' required/>
           <input type="email" name='email' placeholder='Enter your email' required/>
-          <textarea name="message" required></textarea>
+          <textarea name="message" placeholder="Drop your queries in here and we'll get back to you soon!"required></textarea>
 
           <button type='submit' className='btn btn-primary'>SUBMIT</button>
           <Modal open={openModal} onClose={() => setOpenModal(false)} / >

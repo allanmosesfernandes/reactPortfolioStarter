@@ -57,7 +57,7 @@ textarea {
 }
 
 ::placeholder {
-    color: #fff;
+    color: rgba(255, 255, 255, 0.43);
 }
 
 /*========MEDIA QUERIES =============*/
