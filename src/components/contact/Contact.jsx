@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
+import Modal from '../modal/Modal';
+
+import emailjs from 'emailjs-com';
 import { MdOutlineEmail } from 'react-icons/md'
 import { RiMessengerLine } from 'react-icons/ri'
 import { ImWhatsapp } from 'react-icons/im'
 import './contact.css'
+
+
 const Contact = () => {
+  const [openModal, setOpenModal] = useState(false);
+ const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_6knt0lr', 'template_ia8rze6', form.current, 'HvDjbJlmmV_W0QXrw')
+      .then((result) => {
+              setOpenModal(true)
+
+      }, (error) => {
+          console.log(error.text);
+      });
+
+      e.target.reset();
+  };
+
   return (
     <section id="contact">
       <h5>Get in touch</h5>
@@ -29,16 +50,17 @@ const Contact = () => {
             <h5>dummygator@gmail.com</h5>
             <a href="mailto:fernzallan14@gmail.com">Send a message</a>
           </article>
-
+    
         </div>
         {/* //End of Contact Options // */}
 
-        <form action="">
+        <form  ref={form} onSubmit={sendEmail}>
           <input type="text" name='name' placeholder='Full Name' required/>
           <input type="email" name='email' placeholder='Enter your email' required/>
-          <textarea name="Your message" required></textarea>
+          <textarea name="message" required></textarea>
 
-          <button type='submit' className='btn btn-primary'>Submit</button>
+          <button type='submit' className='btn btn-primary'>SUBMIT</button>
+          <Modal open={openModal} onClose={() => setOpenModal(false)} / >
         </form>
       </div>
     </section>
